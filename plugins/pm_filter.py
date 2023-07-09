@@ -123,17 +123,17 @@ async def next_page(bot, query):
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("Nᴇxᴛ ›››", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("Nᴇxᴛ ⏭️", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("‹‹‹ Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("Nᴇxᴛ ›››", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("Nᴇxᴛ ⏭️", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     btn.insert(0, [
-        InlineKeyboardButton("😌 Cʜᴇᴄᴋ Bᴏᴛ PM 😌", url=f"https://t.me/{temp.U_NAME}")
+        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -192,14 +192,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     "Iᴀᴍ Nᴏᴛ Cᴏɴɴᴇᴄᴛᴇᴅ Tᴏ Aɴʏ Gʀᴏᴜᴩ \nCʜᴇᴄᴋ /connections Oʀ Cᴏɴɴᴇᴄᴛ Tᴏ Aɴʏ Gʀᴏᴜᴩ",
                     quote=True
                 )
-                return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+                return await query.answer(' ˆ°• Body Soda Links •°ˆ ')
 
         elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
             grp_id = query.message.chat.id
             title = query.message.chat.title
 
         else:
-            return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+            return await query.answer(' ˆ°• Body Soda Links •°ˆ ')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
@@ -244,7 +244,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton(f"{stat}", callback_data=f"{cb}:{group_id}"),
-             InlineKeyboardButton("🚫 Dᴇʟᴇᴛᴇ 🚫", callback_data=f"deletecb:{group_id}")],
+             InlineKeyboardButton("🗑️ Dᴇʟᴇᴛᴇ 🗑️", callback_data=f"deletecb:{group_id}")],
             [InlineKeyboardButton("‹‹‹ Bᴀᴄᴋ", callback_data="backcb")]
         ])
 
@@ -253,7 +253,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+        return await query.answer(' ˆ°• Body Soda Links •°ˆ ')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -274,7 +274,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text('Some error occurred!!', parse_mode=enums.ParseMode.MARKDOWN)
-        return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+        return await query.answer(' ˆ°• Body Soda Links •°ˆ ')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -297,7 +297,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Sᴏᴍᴇ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+        return await query.answer(' ˆ°• Body Soda Links •°ˆ ')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -315,7 +315,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Sᴏᴍᴇ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+        return await query.answer(' ˆ°• Body Soda Links •°ˆ ')
     elif query.data == "backcb":
         await query.answer()
 
@@ -326,7 +326,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+            return await query.answer(' ˆ°• Body Soda Links •°ˆ ')
         buttons = []
         for groupid in groupids:
             try:
@@ -388,14 +388,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 return
             else:
                 g = short_url(f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
-                await client.send_photo(chat_id=query.from_user.id, photo='https://graph.org/file/f7f173057c2b76940c79c.jpg', caption = f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}</b>", 
+                await client.send_photo(chat_id=query.from_user.id, photo='https://te.legra.ph/file/e4109af48301c964a1c75.jpg', caption = f"<b>📂 Fɪʟᴇ ɴᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n📀 Fɪʟᴇ sɪᴢᴇ ➠ : {get_size(files.file_size)}</b>", 
                                           reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('⚡ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⚡', url='https://t.me/downloadkpslink')
+                    InlineKeyboardButton('📥 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 📥', url='https://t.me/how_to_downloadzz')
                 ],
                 [
-                    InlineKeyboardButton('📂 Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ 📂', url=g)
+                    InlineKeyboardButton('⚡ Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ ⚡', url=g)
                 ]]))
                 await query.answer('Cʟɪᴄᴋ °Cʜᴇᴄᴋ Bᴏᴛ Pᴍ° Bᴜᴛᴛᴏɴ\n\nI Sᴇɴᴛᴇᴅ U ASᴋᴇᴅ Fɪʟᴇs', show_alert=True)
         except UserIsBlocked:
@@ -440,14 +440,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f"https://t.me/{temp.U_NAME}?startgroup=true")
             ],[
-            InlineKeyboardButton('💥 Mᴏᴠɪᴇ Uᴘᴅᴀᴛᴇs 💥', url='https://t.me/englishkaaranmain'),
-            InlineKeyboardButton('🔎 Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🔍', url='https://t.me/englishkaaran3')
+            InlineKeyboardButton('🍿 Mᴏᴠɪᴇ's Uᴘᴅᴀᴛᴇs 🍿', url='https://t.me/Body_Soda_Links'),
+            InlineKeyboardButton('📢 Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 📢', url='https://t.me/Body_Soda_Updates')
             ],[
-            InlineKeyboardButton('😅 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 😊', callback_data='sources')
+            InlineKeyboardButton('▶️ Yᴏᴜ Tᴜʙᴇ ▶️', callback_data='sources')
             ],[
-            InlineKeyboardButton('💌 Aʙᴏᴜᴛ Aɴᴅ Iɴғᴏ 💌', callback_data= 'about')
+            InlineKeyboardButton('🔰 Aʙᴏᴜᴛ Aɴᴅ Iɴғᴏ 🔰', callback_data= 'about')
             ],[
-            InlineKeyboardButton('❌ Cʟᴏꜱᴇ ❌', callback_data='close_data')
+            InlineKeyboardButton('🚫 Cʟᴏꜱᴇ 🚫', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -457,21 +457,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
          )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Uᴩᴅᴀᴛᴇs 😜', url='https://t.me/memes_mithun'),
-            InlineKeyboardButton('♥️ Sʜᴀʀᴇ Mᴇ 💫', url=f"https://t.me/share/url?url=t.me/{temp.U_NAME}")
+            InlineKeyboardButton('📢Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ📢', url='https://t.me/Body_Soda_Updates'),
+            InlineKeyboardButton('💫 Sʜᴀʀᴇ Mᴇ 💫', url=f"https://t.me/share/url?url=t.me/{temp.U_NAME}")
         ], [
-            InlineKeyboardButton('🔭 Sᴛᴀᴛs 📊', callback_data='stats'),
-            InlineKeyboardButton('📞 Cᴏɴᴛᴀᴄᴛ 📟', callback_data='contact')
+            InlineKeyboardButton('📈 Sᴛᴀᴛs 📈', callback_data='stats'),
+            InlineKeyboardButton('📞 Cᴏɴᴛᴀᴄᴛ 📞', callback_data='contact')
         ], [
-            InlineKeyboardButton('😅 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 😊', callback_data='source')
+            InlineKeyboardButton('▶️ Yᴏᴜ Tᴜʙᴇ ▶️', callback_data='source')
         ], [
-            InlineKeyboardButton('😜 Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ Fɪʟᴇs Fʀᴏᴍ Mᴇ 😜', callback_data='info')
+            InlineKeyboardButton('📥 Jᴏɪɴ Bᴀᴄᴋ-Uᴘ Gʀᴏᴜᴘ 📥', callback_data='info')
         ], [
-            InlineKeyboardButton('👋 Exᴛʀᴀ Fᴇᴀᴛᴜʀᴇs 👋', callback_data='mods')
+            InlineKeyboardButton('🀄 Exᴛʀᴀ Fᴇᴀᴛᴜʀᴇs 🀄', callback_data='mods')
         ], [
-            InlineKeyboardButton('📦 Cʜᴇᴄᴋ Pɪɴɢ 📡', callback_data='pongd')
+            InlineKeyboardButton('♦️ Cʜᴇᴄᴋ Pɪɴɢ ♦️', callback_data='pongd')
         ], [
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='start')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -481,23 +481,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
        )
     elif query.data == "mods":
         buttons = [[
-            InlineKeyboardButton('🖼️ Tᴇʟᴇɢʀᴀᴘʜ 🔭', callback_data='tele')
+            InlineKeyboardButton('🖼️ Tᴇʟᴇɢʀᴀᴘʜ 🖼️', callback_data='tele')
         ],[
-            InlineKeyboardButton('🗿 Cʜᴇᴄᴋ Pɪɴɢ ✏️', callback_data='pong')
+            InlineKeyboardButton('♦️ Cʜᴇᴄᴋ Pɪɴɢ ♦️', callback_data='pong')
         ],[
             InlineKeyboardButton('🤙 Sʜᴀʀᴇ Tᴇxᴛ 🤙', callback_data='share')
         ],[
-            InlineKeyboardButton('🧑‍💻 Cᴀʀʙᴏɴ Gᴇɴᴇʀᴀᴛᴏʀ ✴️', callback_data='carbon')
+            InlineKeyboardButton('🎯 Cᴀʀʙᴏɴ Gᴇɴᴇʀᴀᴛᴏʀ 🎯', callback_data='carbon')
         ],[ 
-            InlineKeyboardButton('🙌 Fᴏɴᴛ Gᴇɴᴇʀᴀᴛᴏʀ 📝', callback_data='font')
+            InlineKeyboardButton('📝 Fᴏɴᴛ Gᴇɴᴇʀᴀᴛᴏʀ 📝', callback_data='font')
         ],[  
             InlineKeyboardButton("▶️ Yᴛ Vɪᴅᴇᴏ Dᴏᴡɴʟᴀᴅᴇʀ 🎦", callback_data='video')
         ],[
-            InlineKeyboardButton('🔭 Sᴛᴀᴛs 📊', callback_data='stats')
+            InlineKeyboardButton('📈 Sᴛᴀᴛs 📈', callback_data='stats')
         ],[
-            InlineKeyboardButton('😊 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ ☺', url='@MemesMithun')
+            InlineKeyboardButton('👑 Oᴡɴᴇʀ 👑', url='@Praxxsh')
         ],[
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='about')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='about')
         ]]       
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -507,7 +507,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        )
     elif query.data == "tele":
         buttons = [[
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='mods')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='mods')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -517,7 +517,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        )
     elif query.data == "share":
         buttons = [[
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='mods')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='mods')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -527,7 +527,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "carbon":
         buttons = [[
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='mods')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='mods')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -537,7 +537,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "font":
         buttons = [[
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='mods')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='mods')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -547,7 +547,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        )
     elif query.data == "video":
         buttons = [[
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='mods')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='mods')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -557,7 +557,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "pongd":
         buttons = [[
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='about')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -567,7 +567,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "pong":
         buttons = [[
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='mods')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='mods')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -578,9 +578,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "sources":
         buttons = [[
 
-            InlineKeyboardButton('😊 Rᴇᴩᴏ 😊', url='@MemesMithun')
+            InlineKeyboardButton('👑 Oᴡɴᴇʀ 👑', url='@Praxxsh')
         ], [
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='start')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -591,9 +591,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "source":
         buttons = [[
 
-            InlineKeyboardButton('😊 Rᴇᴩᴏ 😊', url='https://Github.com/nakku123/PremiumFilter')
+            InlineKeyboardButton('▶️ Yᴏᴜ Tᴜʙᴇ ▶️', url='https://youtube.com/@Body_Soda_Movies')
         ], [
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='about')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -603,9 +603,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "info":
         buttons = [[
-            InlineKeyboardButton('😪 Hᴏᴡ Tᴏ Oᴩᴇɴ Mʏ Lɪɴᴋs 💢', url='https://t.me/memes_mithun')
+            InlineKeyboardButton('🚨 Jᴏɪɴ Bᴀᴄᴋ-Uᴘ Gʀᴏᴜᴘ 🚨', url='https://t.me/Body_Soda_Updates')
         ], [
-            InlineKeyboardButton('📞 Cᴏɴᴛᴀᴄᴛ 📟', callback_data='contact')
+            InlineKeyboardButton('📞 Cᴏɴᴛᴀᴄᴛ 📞', callback_data='contact')
         ], [
             InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='about')
         ]]
@@ -617,9 +617,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "contact":
         buttons = [[
-            InlineKeyboardButton('😳 Cʀᴇᴀᴛᴏʀ 😳', url='https://t.me/memes_mithun')
+            InlineKeyboardButton('⚡ Oᴡɴᴇʀ 1 ⚡', url='https://t.me/Praxxsh')
         ], [     
-            InlineKeyboardButton('📞 Cᴏɴᴛᴀᴄᴛ 📟', url='https://t.me/memes_mithun')
+            InlineKeyboardButton('⚡ Oᴡɴᴇʀ 2 ⚡', url='https://t.me/Ayseditz')
         ], [  
             InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='about')
         ], [
@@ -634,7 +634,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('♻️ Rᴇғʀᴇsʜ', callback_data='rfrsh')
         ], [
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='about')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -654,7 +654,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('♻️ Rᴇғʀᴇsʜ', callback_data='rfrsh')
         ], [
-            InlineKeyboardButton('‹‹‹ Bᴀᴄᴋ', callback_data='about')
+            InlineKeyboardButton('👨‍🦯 Bᴀᴄᴋ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -719,7 +719,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer(' ˆ°• Tᴀᴍɪʟᴀɴ BᴏᴛsZ •°ˆ ')
+    await query.answer(' ˆ°• Body Soda Links •°ˆ ')
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -733,10 +733,10 @@ async def auto_filter(client, msg, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-                await client.send_message(file_req_channel,f"-🦋 #REQUESTED_FILE 🦋-\n\n📝Fɪʟᴇ Nᴀᴍᴇ :{search}\n\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ: {message.from_user.first_name}\n\n Usᴇʀ Iᴅ :{message.from_user.id}\n\n🗃Cᴏᴅᴇᴅᴇᴅ Bʏ  @Tamilan_BotsZ",
+                await client.send_message(file_req_channel,f"-🦋 #REQUESTED_FILE 🦋-\n\n📝Fɪʟᴇ Nᴀᴍᴇ :{search}\n\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ: {message.from_user.first_name}\n\n Usᴇʀ Iᴅ :{message.from_user.id}\n\n🗃Cᴏᴅᴇᴅᴇᴅ Bʏ  @Praxxsh",
                                                                                                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔺 Fɪʟᴇ Uᴩʟᴏᴀᴅᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ 🔺", callback_data="close_data")]]))
-                l = await message.reply_text(text=f"△ Hᴇʏ Fʀɪᴇɴᴅ {message.from_user.first_name} 😎,\n\nʏᴏᴜʀ ʀᴇQᴜᴇꜱᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ᴛᴏ ᴏᴜʀ ᴀᴅᴍɪɴ'ꜱ ᴅᴀꜱʜʙᴏᴀʀᴅ !\n\nᴘʟᴇᴀꜱᴇ ᴋᴇᴇᴘ ꜱᴏᴍᴇ ᴘᴀᴛɪᴇɴᴄᴇ !\nᴛʜᴇʏ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴀꜱ ꜱᴏᴏɴ ᴀꜱ ᴘᴏꜱꜱɪʙʟᴇ.\n\n➟ 📝Cᴏɴᴛᴇɴᴛ Nᴀᴍᴇ : {search}\n\n➟ 👮 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ Yᴏᴜ : {message.from_user.first_name}\n\n༺ @TamilanBotsZSupport༻\n\n🦋・‥☆Sᴜᴩᴩᴏʀᴛ Oᴜʀ Cʜᴀɴɴᴇʟ ☆‥・🦋\n╰┈➤・☆ @SharathItsIsMe ☆",
-                                                                                                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  Aᴅᴅ Mᴇ Tᴏ Uʀ Gʀᴏᴜᴩ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Tᴀᴍɪʟᴀɴ Bᴏᴛs ✪", url="https://t.me/Tamilan_BotsZ"), InlineKeyboardButton("✪ Sᴜᴩᴩᴏʀᴛ Gʀᴏᴜᴩ ✪", url="https://t.me/TamilanBotsZ_Support"), InlineKeyboardButton("✪ Rᴇᴩᴏ ✪", url="https://Github.com/TamilanBotsZ/PremiumFilter")],[InlineKeyboardButton("╚»♥️Dᴇʟᴇᴛᴇ Tʜɪs Mᴇssᴀɢᴇ ♥️«╝", callback_data="close_data")]]))
+                l = await message.reply_text(text=f"△ Hᴇʏ Fʀɪᴇɴᴅ {message.from_user.first_name} 😎,\n\nʏᴏᴜʀ ʀᴇQᴜᴇꜱᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ᴛᴏ ᴏᴜʀ ᴀᴅᴍɪɴ'ꜱ ᴅᴀꜱʜʙᴏᴀʀᴅ !\n\nᴘʟᴇᴀꜱᴇ ᴋᴇᴇᴘ ꜱᴏᴍᴇ ᴘᴀᴛɪᴇɴᴄᴇ !\nᴛʜᴇʏ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴀꜱ ꜱᴏᴏɴ ᴀꜱ ᴘᴏꜱꜱɪʙʟᴇ.\n\n➟ 📝Cᴏɴᴛᴇɴᴛ Nᴀᴍᴇ : {search}\n\n➟ 👮 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ Yᴏᴜ : {message.from_user.first_name}\n\n༺ @Body_Soda_Links༻\n\n🦋・‥☆Sᴜᴩᴩᴏʀᴛ Oᴜʀ Cʜᴀɴɴᴇʟ ☆‥・🦋\n╰┈➤・☆ @Body_Soda_Links ☆",
+                                                                                                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  Aᴅᴅ Mᴇ Tᴏ Uʀ Gʀᴏᴜᴩ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Body_Soda_Links ✪", url="https://t.me/Body_Soda_Updates"), InlineKeyboardButton("✪ Sᴜᴩᴩᴏʀᴛ Gʀᴏᴜᴩ ✪", url="https://t.me/Body_Soda_Updates"), InlineKeyboardButton("✪ Rᴇᴩᴏ ✪", url="https://Github.com/TamilanBotsZ/PremiumFilter")],[InlineKeyboardButton("╚»♥️Dᴇʟᴇᴛᴇ Tʜɪs Mᴇssᴀɢᴇ ♥️«╝", callback_data="close_data")]]))
                 await asyncio.sleep(12)
                 await l.delete()
                 if settings["spell_check"]:
@@ -787,7 +787,7 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
         )
     btn.insert(0, [
-        InlineKeyboardButton("😌 Cʜᴇᴄᴋ Bᴏᴛ PM 😌", url=f"https://t.me/{temp.U_NAME}")
+        InlineKeyboardButton("⚡ Cʜᴇᴄᴋ Bᴏᴛ PM ⚡", url=f"https://t.me/{temp.U_NAME}")
     ])
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -824,7 +824,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>😙Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention} \n\n😊 Yᴏᴜʀ Qᴜᴇʀʏ : {search} \n\n📂Tᴏᴛᴀʟ Fɪʟᴇs Fᴏᴜɴᴅᴇᴅ : {str(total_results)}</b>"
+        cap = f"<b>🧧 Yᴏᴜʀ Qᴜᴇʀʏ : {search} \n\n🧧Requested by : {message.from_user.mention}\n\n🧧Uploaded by : {chat)}</b>"
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
