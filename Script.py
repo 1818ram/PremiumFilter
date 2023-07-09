@@ -29,13 +29,13 @@ Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ sᴇᴇ ᴛʜᴇ ᴍᴀɢ�
 📢 Sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ : <a href=https://t.me/englishkaaran3>englishkaaran group</a>
 📣 Sᴜᴘᴘᴏʀᴛ Cʜᴀɴɴᴇʟ : <a href=https://t.me/Body_Soda_Links>Body Soda Links</a></b>"""
 
-    SOURCES_TXT = """Sᴏʀʀʏ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ Oғ Tʜɪs Bᴏᴛ 
+    SOURCES_TXT = """Sᴏʀʀʏ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ Oғ Tʜɪs Bᴏᴛ ɪs Pʀɪᴠᴀᴛᴇ ➕Aᴅᴅ Tʜɪs Bᴏᴛ ɪɴ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Usᴇ Lɪᴋᴇ Yᴏᴜʀs❣️
 
 - Dᴇᴠᴇʟᴏᴘᴇʀ <a href=https://t.me/Praxxsh>𝙊𝙗𝙞𝙩𝙤</a>
 
 - & 📢Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ📢"""
 
-    SOURCE_TXT = """Tʜɪs Is Aɴ Oᴩᴇɴ-Sᴏᴜʀᴄᴇ Pʀᴏᴊᴇᴄᴛ Bʏ @Praxxsh</b>
+    SOURCE_TXT = """➕Aᴅᴅ Tʜɪs Bᴏᴛ ɪɴ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Usᴇ Lɪᴋᴇ Yᴏᴜʀs❣️</b>
 
 - Dᴇᴠᴇʟᴏᴘᴇʀ <a href=https://t.me/Praxxsh>@Praxxsh</a></b>
 
