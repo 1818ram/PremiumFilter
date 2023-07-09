@@ -12,41 +12,41 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', '9439609'))
-API_HASH = environ.get('API_HASH', '3a64962f1face2fc285d0bb72587b139')
-BOT_TOKEN = environ.get('BOT_TOKEN', '5721899481:AAEkgIxcwqDa1bcRBl2tc7ljoghuxAIUkCE')
+API_ID = int(environ.get('API_ID', '29001906'))
+API_HASH = environ.get('API_HASH', 'ce6c965a54b3d5f393f84446c37a30d9')
+BOT_TOKEN = environ.get('BOT_TOKEN', '5856846633:AAH36DFJ90IbNwms28VfjDhod45opEBeZKI')
 # Bot settings
-CACHE_TIME = int(environ.get('CACHE_TIME', 300))
+CACHE_TIME = int(environ.get('CACHE_TIME', 420))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
-PICS = (environ.get('PICS', 'https://graph.org/file/c82eb78aa14cfca0890b5.jpg')).split()
+PICS = (environ.get('PICS', 'https://te.legra.ph/file/7f7aec2749abe4bc7e5d0.jpg')).split()
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '2112711926').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1217549670').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '2112711926').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '1217549670').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL', '-1001805053423')
+auth_channel = environ.get('AUTH_CHANNEL', '-1001673312047')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://mithun:mithun@filterbot.ofvgx0l.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Filterbot")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://PRABHA:PRABHA@cluster0.iycibgx.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001926079837' ))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001867149497' ))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION","ɴᴀᴍᴇ: <code>{file_name}</code> \n\nᴊᴏɪɴ ɴᴏᴡ: [Englishkaaran](https://t.me/englishkaaran3)</b>")
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "ɴᴀᴍᴇ: <code>{file_name}</code> \n\nᴊᴏɪɴ ɴᴏᴡ: [Englishkaaran](https://t.me/englishkaaran3)</b>")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION","Nᴀᴍᴇ: <code>{file_name}</code> \n\nJᴏɪɴ ɴᴏᴡ: [Body Soda Links](https://t.me/Body_Soda_Links)</b>")
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "Nᴀᴍᴇ: <code>{file_name}</code> \n\nJᴏɪɴ ɴᴏᴡ: [Body Soda Links](https://t.me/Body_Soda_Links)</b>")
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query: {query}</b> \n‌IMDb Data:\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
-INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', '-1001772701896'))
+INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', '-1001604232277'))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
@@ -62,14 +62,14 @@ LOG_STR += ("Spell Check Mode Is Enabled, bot will be suggesting related movies 
 LOG_STR += (f"MAX_LIST_ELM Found, long list will be shortened to first {MAX_LIST_ELM} elements\n" if MAX_LIST_ELM else "Full List of casts and crew will be shown in imdb template, restrict them by adding a value to MAX_LIST_ELM\n")
 LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 
-HOW_TO_DOWNLOAD =  environ.get('HOW_TO_DOWNLOAD', 'https://t.me/downloadkpslink')
+HOW_TO_DOWNLOAD =  environ.get('HOW_TO_DOWNLOAD', 'https://t.me/how_to_downloadzz')
 
-AUTO_DELETE_SECONDS = int(environ.get('AUTO_DELETE_SECONDS', 100))
+AUTO_DELETE_SECONDS = int(environ.get('AUTO_DELETE_SECONDS', 420))
 
-FILE_REQ_CHANNEL = int(environ.get('FILE_REQ_CHANNEL', '-1001772701896'))
+FILE_REQ_CHANNEL = int(environ.get('FILE_REQ_CHANNEL', '-1001846111971'))
 
-SHORTNER_SITE =  environ.get('SHORTNER_SITE', 'v2.kpslink.in') #Put Only Shortner Site domain don't put like this https://tnlink.in/
+SHORTNER_SITE =  environ.get('SHORTNER_SITE', 'kpslink.in') #Put Only Shortner Site domain don't put like this https://tnlink.in/
 
-SHORTNER_API =  environ.get('SHORTNER_API', '8c61880e7ea88984217affa36038ee747900069f')
+SHORTNER_API =  environ.get('SHORTNER_API', '0ab71a33992bf7d021e591ac145c244c4163e94e')
 
 AUTO_DELETE =  environ.get('AUTO_DELETE', 'True')
